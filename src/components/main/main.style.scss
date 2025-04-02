@@ -1,0 +1,32 @@
+.main {
+    height: 100%;
+    display: flex;
+    padding: 10px 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    margin-top: 60px;
+    width: 50%;
+    min-width: 300px;
+}
+.add-new-post-btn {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 2px solid #cccccc;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: #f0f0f0;
+        cursor: pointer;
+    }
+}

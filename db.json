@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Кот украл сосиску",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi delectus iure temporibus odio quasi itaque, omnis quisquam officia deleniti sed animi voluptate explicabo vero cupiditate voluptatem aspernatur et accusantium repellendus quibusdam ipsa quis eaque earum optio ad? Voluptas, soluta fugit. awdawdawdawdawdawdawddawdawdawdawda",
+      "author": "Виктор Сазанов",
+      "url": "https://avatars.mds.yandex.net/i?id=d3b46b23e87a6e1627850fc250d853218ea4f426-4826347-images-thumbs&n=13",
+      "likes": 11
+    },
+    {
+      "id": "2",
+      "title": "Кот украл котлетку",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi delectus iure temporibus odio quasi itaque, omnis quisquam officia deleniti sed animi voluptate explicabo vero cupiditate voluptatem aspernatur et accusantium repellendus quibusdam ipsa quis eaque earum optio ad? Voluptas, soluta fugit.",
+      "author": "Виктор Сазанов",
+      "url": "https://avatars.mds.yandex.net/i?id=d3b46b23e87a6e1627850fc250d853218ea4f426-4826347-images-thumbs&n=13",
+      "likes": 14
+    },
+    {
+      "id": "3",
+      "title": "Кот украл сардельку",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi delectus iure temporibus odio quasi itaque, omnis quisquam officia deleniti sed animi voluptate explicabo vero cupiditate voluptatem aspernatur et accusantium repellendus quibusdam ipsa quis eaque earum optio ad? Voluptas, soluta fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi delectus iure temporibus odio quasi itaque, omnis quisquam officia deleniti sed animi voluptate explicabo vero cupiditate voluptatem aspernatur et accusantium repellendus quibusdam ipsa quis eaque earum optio ad? Voluptas, soluta fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi delectus iure temporibus odio quasi itaque, omnis quisquam officia deleniti sed animi voluptate explicabo vero cupiditate voluptatem aspernatur et accusantium repellendus quibusdam ipsa quis eaque earum optio ad? Voluptas, soluta fugit.",
+      "author": "Виктор Сазанов",
+      "url": "",
+      "likes": 15
+    }
+  ]
+}
