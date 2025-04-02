@@ -1,6 +1,6 @@
 export const updatePost = async (id: number, data: any) => {
     console.log(data)
-    const updatedPost = await fetch(`http://localhost:3001/posts/${id}`, {
+    const updatedPost = await fetch(`http://server-production-61e7.up.railway.app/posts/${id}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json; charset=utf-8",
