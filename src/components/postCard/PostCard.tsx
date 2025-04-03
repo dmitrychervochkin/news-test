@@ -81,13 +81,13 @@ export const PostCard = ({
                 {isEdit ? (
                     <img
                         className="post-icon-btn"
-                        src="./src/assets/save.png"
+                        src="/save.png"
                         onClick={onSaveClicked}
                     />
                 ) : (
                     <img
                         className="post-icon-btn"
-                        src="./src/assets/edit.png"
+                        src="/edit.png"
                         onClick={onEditClicked}
                     />
                 )}
@@ -132,12 +132,12 @@ export const PostCard = ({
                 <div className="likes-container">
                     <img
                         className="post-icon-btn"
-                        src="./src/assets/like.png"
+                        src="/like.png"
                         onClick={onLikeClicked}
                     />
                     {likes}
                 </div>
-                <img className="post-icon-btn" src="./src/assets/comment.png" />
+                <img className="post-icon-btn" src="/comment.png" />
             </div>
         </div>
     )
