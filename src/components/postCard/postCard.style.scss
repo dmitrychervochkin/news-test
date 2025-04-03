@@ -16,6 +16,9 @@
     font-size: 14px;
 }
 .post-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 10px 0;
     border-bottom: 2px solid #cccccc;
 }
@@ -114,8 +117,8 @@
     display: flex;
     z-index: 2;
     position: absolute;
-    height: 30px;
-    width: 100px;
+    height: 28px;
+    width: 95px;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
@@ -128,4 +131,16 @@
         cursor: pointer;
         background-color: #e46d6d;
     }
+}
+.add-new-post-area {
+    color: #a1a1a1;
+    padding: 10px;
+    font-size: 14px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid #ccc;
+    width: 100%;
+    height: 20vh;
+    resize: none;
 }

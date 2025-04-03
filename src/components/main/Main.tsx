@@ -9,7 +9,7 @@ export interface PostType {
     title: string
     description: string
     author: string
-    url?: string
+    url: string | undefined
     likes: number
     setRefresh: (p: boolean | ((p: boolean) => boolean)) => void
 }
@@ -20,7 +20,10 @@ export const Main = () => {
     const [isAdd, setIsAdd] = useState<boolean>(false)
 
     useEffect(() => {
-        server.getPosts().then((res) => setPosts(res))
+        server.getPosts().then((res) => {
+            setPosts(res)
+            localStorage.setItem("posts", JSON.stringify(res))
+        })
     }, [refresh])
 
     return (

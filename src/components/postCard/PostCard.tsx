@@ -14,6 +14,15 @@ export const PostCard = ({
     setRefresh,
 }: PostType) => {
     const [isOpen, setIsOpen] = useState(false)
+    const [isEdit, setIsEdit] = useState(false)
+    const [editPost, setEditPost] = useState({
+        id,
+        title,
+        description,
+        author,
+        url,
+        likes,
+    })
 
     const openDescriptionHandler = () => {
         setIsOpen((p) => !p)
@@ -28,14 +37,61 @@ export const PostCard = ({
             setRefresh((p) => !p)
         })
     }
+    const onChangeInput = (name: string, e: any) => {
+        setEditPost({ ...editPost, [name]: e.target.value })
+    }
+    const onEditClicked = () => {
+        setIsEdit(true)
+    }
+    const onSaveClicked = () => {
+        server.updatePost(id, editPost).finally(() => {
+            setRefresh((p) => !p)
+            setIsEdit(false)
+        })
+    }
 
     return (
         <div className="post-card">
             <div className="delete-btn" onClick={onDeleteClicked}>
                 Удалить
             </div>
-            <Image url={url} />
-            <h3 className="post-title">{title}</h3>
+            {isEdit ? (
+                <input
+                    placeholder="Введите адрес изображения..."
+                    className="add-new-post-input"
+                    style={{ width: "100%" }}
+                    value={editPost.url}
+                    onChange={(e) => onChangeInput("url", e)}
+                />
+            ) : (
+                <Image url={url} />
+            )}
+
+            <h3 className="post-title">
+                {isEdit ? (
+                    <input
+                        placeholder="Введите заголовок..."
+                        className="add-new-post-input"
+                        value={editPost.title}
+                        onChange={(e) => onChangeInput("title", e)}
+                    />
+                ) : (
+                    title
+                )}
+                {isEdit ? (
+                    <img
+                        className="post-icon-btn"
+                        src="./src/assets/save.png"
+                        onClick={onSaveClicked}
+                    />
+                ) : (
+                    <img
+                        className="post-icon-btn"
+                        src="./src/assets/edit.png"
+                        onClick={onEditClicked}
+                    />
+                )}
+            </h3>
             <div
                 style={{
                     overflow: isOpen ? "visible" : "hidden",
@@ -43,10 +99,31 @@ export const PostCard = ({
                 }}
                 className="post-description"
             >
-                {description}
+                {isEdit ? (
+                    <textarea
+                        placeholder="Введите описание..."
+                        className="add-new-post-area"
+                        value={editPost.description}
+                        onChange={(e) => onChangeInput("description", e)}
+                    />
+                ) : (
+                    description
+                )}
             </div>
             <footer className="post-footer">
-                <div className="post-author">Автор: {author}</div>
+                <div className="post-author">
+                    Автор:{" "}
+                    {isEdit ? (
+                        <input
+                            placeholder="Введите имя автора..."
+                            className="add-new-post-input"
+                            value={editPost.author}
+                            onChange={(e) => onChangeInput("author", e)}
+                        />
+                    ) : (
+                        author
+                    )}
+                </div>
                 <div className="more-info-btn" onClick={openDescriptionHandler}>
                     {isOpen ? "Скрыть" : "Показать"}
                 </div>
