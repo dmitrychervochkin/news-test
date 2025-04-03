@@ -2,7 +2,12 @@ import { useState } from "react"
 import "../postCard.style.scss"
 import { server } from "../../../api"
 
-export const AddNewPost = () => {
+interface addNewPostInterface {
+    setRefresh: (p: boolean | ((p: boolean) => boolean)) => void
+    setIsAdd: (p: boolean | ((p: boolean) => boolean)) => void
+}
+
+export const AddNewPost = ({ setRefresh, setIsAdd }: addNewPostInterface) => {
     const [newPostData, setNewPostData] = useState({})
 
     const onInputChange = (name: string, e: any) => {
@@ -10,7 +15,10 @@ export const AddNewPost = () => {
     }
 
     const onSubmit = () => {
-        server.addNewPost(newPostData)
+        server.addNewPost(newPostData).finally(() => {
+            setRefresh((p: boolean) => !p)
+            setIsAdd(false)
+        })
     }
     return (
         <div className="add-new-post">

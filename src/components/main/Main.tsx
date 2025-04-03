@@ -35,7 +35,7 @@ export const Main = () => {
                 >
                     <div>{isAdd ? "Скрыть" : "Предложить новость +"}</div>
                 </button>
-                {isAdd && <AddNewPost />}
+                {isAdd && <AddNewPost setRefresh={setRefresh} setIsAdd={setIsAdd}/>}
                 {posts.map(({ id, title, description, author, url, likes }) => (
                     <PostCard
                         key={id}
