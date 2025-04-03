@@ -4,7 +4,7 @@ export const getPosts = async () => {
   headers: {
     'Content-Type': 'application/json',
   },
-  mode: 'cors',  // 👈 Обязательно
+  mode: 'cors',
 }).then((data) =>
         data.json()
     )
