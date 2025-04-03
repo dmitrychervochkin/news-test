@@ -124,9 +124,14 @@ export const PostCard = ({
                         author
                     )}
                 </div>
-                <div className="more-info-btn" onClick={openDescriptionHandler}>
-                    {isOpen ? "Скрыть" : "Показать"}
-                </div>
+                {!isEdit && (
+                    <div
+                        className="more-info-btn"
+                        onClick={openDescriptionHandler}
+                    >
+                        {isOpen ? "Скрыть" : "Показать"}
+                    </div>
+                )}
             </footer>
             <div className="post-actions">
                 <div className="likes-container">
